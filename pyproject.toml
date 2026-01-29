@@ -11,14 +11,17 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "finalproject_kogay_sergey_m255_55", from = "src"}]
+packages = [{include = "valutatrade_hub"}]
+
+[project.scripts]
+project = "main:main"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
-line-length = 88
+line-length = 120
 target-version = "py311"
 exclude = ["venv", ".venv", "dist", "__pycache__"]
 
