@@ -122,4 +122,4 @@ INFO 2026-01-31 12:38:22.335916 BUY {} result=OK
 
 ---
 
-[![asciinema demo](https://asciinema.org/a/vYyMQFrM0ktB7Zry.svg)](https://asciinema.org/a/vYyMQFrM0ktB7Zry)
+[![asciinema demo](https://asciinema.org/a/Z8u8vuLiJiWArgwb.svg)](https://asciinema.org/a/Z8u8vuLiJiWArgwb)
