@@ -46,17 +46,17 @@ git clone https://github.com/kogays/finalproject_kogay_m25-555.git
    ```
 ## Управление
 Список команд:
-   1) Регистрация пользователя: register --username <str> --password <str>
-   2) Авторизация пользователя: login --username <str> --password <str>
-   3) Показать портфолио пользователя в базовой валюте: show-portfolio
-   4) Показать портфолио пользователя в кастомной валюте: show-portfolio --base <str>
-   5) Купить валюту: buy --currency <str> --amount <float>
-   6) Продать валюту: sell --currency <str> --amount <float>
-   7) Получить текущий курс: get-rate --from <str> --to <str>
-   8) Получить актуальные курсы валют: update-rates
-   9) Показать список актуальных курсов: show-rates
-   10) Показать N самых дорогих валют: show-rates --top <int>
-   11) Показать курс конкретной валюты: show-rates --currency <str>
+1) Регистрация пользователя: register --username <str> --password <str>
+2) Авторизация пользователя: login --username <str> --password <str>
+3) Показать портфолио пользователя в базовой валюте: show-portfolio
+4) Показать портфолио пользователя в кастомной валюте: show-portfolio --base <str>
+5) Купить валюту: buy --currency <str> --amount <float>
+6) Продать валюту: sell --currency <str> --amount <float>
+7) Получить текущий курс: get-rate --from <str> --to <str>
+8) Получить актуальные курсы валют: update-rates
+9) Показать список актуальных курсов: show-rates
+10) Показать N самых дорогих валют: show-rates --top <int>
+11) Показать курс конкретной валюты: show-rates --currency <str>
 
 Пример работы
    ```
