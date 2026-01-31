@@ -1,4 +1,4 @@
-# finalproject_kogay-sergey_m255-55
+# finalproject_kogay_m25-555
 
 # Платформа для отслеживания и симуляции торговли валютами
 
@@ -26,21 +26,100 @@
 
 1. Клонировать репозиторий:
 ```commandline
-git clone URL репозитория
-cd finalproject_kogay-sergey_m255-55
+git clone https://github.com/kogays/finalproject_kogay_m25-555.git
 ```
 
-2. Установить зависимости через Poetry:
-```commandline
-make install
-```
+2. **Задать ключ доступа к бирже**
+   
+   В файле корневой папки с названием ```.env``` необходимо создать переменную EXCHANGERATE_API_KEY которая содержит в себе персональный API-ключ. Ключ можно получить бесплатно, пройдя регистрацию на сайте https://www.exchangerate-api.com/.
 
-3. Активировать виртуальное окружение:
-```commandline
-poetry shell
-```
+   Содержимое файла:
+   ```text
+   EXCHANGERATE_API_KEY=key_example
+   ```
 
-## Запуск проекта
-```commandline
-make project
-```
+3. **Активируйте виртуальное окружение и запустите**
+   ```commandline
+   make install
+   make build
+   make project
+   ```
+## Управление
+Список команд:
+   1) Регистрация пользователя: register --username <str> --password <str>
+   2) Авторизация пользователя: login --username <str> --password <str>
+   3) Показать портфолио пользователя в базовой валюте: show-portfolio
+   4) Показать портфолио пользователя в кастомной валюте: show-portfolio --base <str>
+   5) Купить валюту: buy --currency <str> --amount <float>
+   6) Продать валюту: sell --currency <str> --amount <float>
+   7) Получить текущий курс: get-rate --from <str> --to <str>
+   8) Получить актуальные курсы валют: update-rates
+   9) Показать список актуальных курсов: show-rates
+   10) Показать N самых дорогих валют: show-rates --top <int>
+   11) Показать курс конкретной валюты: show-rates --currency <str>
+
+Пример работы
+   ```
+   make project  
+poetry run project
+Регистрация пользователя: register --username <str> --password <str>
+Авторизация пользователя: login --username <str> --password <str>
+Показать портфолио пользователя в базовой валюте: show-portfolio
+Показать портфолио пользователя в кастомной валюте: show-portfolio --base <str>
+Купить валюту: buy --currency <str> --amount <float>
+Продать валюту: sell --currency <str> --amount <float>
+Получить текущий курс: get-rate --from <str> --to <str>
+Получить актуальные курсы валют: update-rates
+Показать список актуальных курсов: show-rates
+Показать N самых дорогих валют: show-rates --top <int>
+Показать курс конкретной валюты: show-rates --currency <str>
+Введите команду: register --username sergey --password zxcv
+Пользователь 'sergey' зарегистрирован (id=1). Войдите: login --username sergey --password ****
+Введите команду: update-rates
+Update successful. Total rates updated: 6. Last refresh: 2026-01-31 12:37:29.960071
+Введите команду: show-rates
+Rates from cache (updated at 2026-01-31T12:37:29)
++---------+-------------+
+|   Pair  |     Rate    |
++---------+-------------+
+| BTC_USD | 83414.00000 |
+| ETH_USD |  2677.60000 |
+| EUR_USD |   1.18906   |
+| GBP_USD |   1.37212   |
+| RUB_USD |   0.01317   |
+| SOL_USD |  117.70000  |
++---------+-------------+
+Введите команду: show-portfolio
+Сначала выполните login
+Введите команду: login --username sergey --password zxcv
+Вы вошли как 'sergey'
+Введите команду: show-portfolio
+- BTC: 300.0  → 25024200.0 USD
+- USD: 113517.0  → 113517.0 USD
+ИТОГО: 25137717.0 USD
+Введите команду: buy --currency BTC --amount 100
+INFO 2026-01-31 12:37:56.476752 BUY {} result=Недостаточно средств: доступно 113517.0 USD, требуется 8341400.0 USD
+Ошибка: Недостаточно средств: доступно 113517.0 USD, требуется 8341400.0 USD
+Введите команду: sell --currency BTC --amount 100
+Продажа выполнена: 100.0 BTC по курсу 83414 USD/BTC
+Изменения в портфеле:
+- BTC: было 300.0 → стало 200.0
+Оценочная выручка: 8341400.0 USD
+INFO 2026-01-31 12:38:09.029977 SELL {} result=OK
+Введите команду: buy --currency BTC --amount 100
+- BTC: было 200.0 → стало 300.0
+Оценочная стоимость покупки: 8341400.0 USD
+INFO 2026-01-31 12:38:22.335916 BUY {} result=OK
+Введите команду: show-portfolio
+- BTC: 300.0  → 25024200.0 USD
+- USD: 113517.0  → 113517.0 USD
+ИТОГО: 25137717.0 USD
+Введите команду: get-rate --from BTC --to USD
+Курс BTC→USD: 83414 (обновлено: 2026-01-31T12:37:29)
+Обратный курс USD→BTC: 1.1988395233414055e-05
+   Введите команду: exit
+   ```
+
+---
+
+[![asciinema demo](https://asciinema.org/a/vYyMQFrM0ktB7Zry.svg)](https://asciinema.org/a/vYyMQFrM0ktB7Zry)

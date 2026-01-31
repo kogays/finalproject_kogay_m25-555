@@ -3,11 +3,15 @@ name = "finalproject-kogay-sergey-m255-55"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    {name = "Sergey Kogay",email = "serge.kogi@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "prompt (>=0.4.1,<0.5.0)",
+    "requests (>=2.32.5,<3.0.0)",
+    "prettytable (>=3.17.0,<4.0.0)",
+    "dotenv (>=0.9.9,<0.10.0)"
 ]
 
 [tool.poetry]
@@ -19,6 +23,17 @@ project = "main:main"
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.valutatrade]
+data_directory = "data"
+rates_ttl_seconds = 300
+default_base_currency = "USD"
+log_directory = "logs"
+log_level = "INFO"
+log_format = "text"
+max_log_size_mb = 10
+backup_log_files = 5
+supported_currencies = ["USD", "EUR", "RUB", "GBP", "JPY", "CNY", "BTC", "ETH", "LTC", "XRP"]
 
 [tool.ruff]
 line-length = 120
